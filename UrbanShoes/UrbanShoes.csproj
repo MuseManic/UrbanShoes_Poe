@@ -176,6 +176,7 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductImageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="DAL\MainStore.cs" />
     <Compile Include="Global.asax.cs">
@@ -198,6 +199,7 @@
     <Compile Include="ViewModels\BasketSummaryViewModel.cs" />
     <Compile Include="ViewModels\BasketViewModel.cs" />
     <Compile Include="ViewModels\ProductIndexViewModel.cs" />
+    <Compile Include="ViewModels\ProductViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="appicon_qn5_icon.ico" />
