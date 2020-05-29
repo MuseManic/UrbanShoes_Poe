@@ -1,4 +1,4 @@
-﻿@model BabyStore.Models.Category
+﻿@model UrbanShoes.Models.Category
 
 @{
     ViewBag.Title = "Edit Category";
@@ -10,7 +10,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })

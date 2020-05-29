@@ -182,6 +182,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\StoreContext.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Basket.cs" />
@@ -214,7 +215,6 @@
     <Content Include="Content\IndexStyles.css" />
     <Content Include="Content\LoginCss.css" />
     <Content Include="Content\SliderCss.css" />
-    <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -282,7 +282,14 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Image\ProductImages\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\Basket\" />
+    <Folder Include="Views\Errors\" />
+    <Folder Include="Views\ProductImages\" />
+    <Folder Include="Views\UserAdmin\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

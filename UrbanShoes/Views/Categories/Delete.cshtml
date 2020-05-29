@@ -1,4 +1,4 @@
-﻿@model BabyStore.Models.Category
+﻿@model UrbanShoes.Models.Category
 
 @{
     ViewBag.Title = "Delete Category";
@@ -20,7 +20,8 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
