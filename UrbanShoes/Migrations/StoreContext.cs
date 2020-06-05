@@ -37,7 +37,7 @@ namespace UrbanShoes.Migrations
             };
             categories.ForEach(c => context.Categories.AddOrUpdate(p => p.Name, c));
             context.SaveChanges();
-
+            /*
             var products = new List<Product>
             {
                 new Product { Name = "Sleep Suit", Description="For sleeping or general wear",Price=4.99M, CategoryID=categories.Single( c => c.Name == "Clothes").ID },
@@ -58,9 +58,9 @@ namespace UrbanShoes.Migrations
                 new Product { Name = "Circus Crib Bale", Description="Contains sheet, duvet and bumper", Price=29.99M, CategoryID=categories.Single( c => c.Name == "Sleeping").ID  },
                 new Product { Name = "Loved Crib Bale", Description="Contains sheet, duvet and bumper", Price=35.99M, CategoryID=categories.Single( c => c.Name == "Sleeping").ID  }
             };
-
-            products.ForEach(c => context.Products.AddOrUpdate(p => p.Name, c));
-            context.SaveChanges();
+            */
+            //products.ForEach(c => context.Products.AddOrUpdate(p => p.Name, c));
+            //  context.SaveChanges();
 
             /*
             var images = new List<ProductImage>
