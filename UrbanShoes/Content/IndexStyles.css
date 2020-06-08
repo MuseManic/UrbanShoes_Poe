@@ -10,6 +10,15 @@
     width: 640px;
     background-image: url(../Image/background1.png);
 }
+#divunder {
+    position: absolute;
+    top: 30%;
+    margin-top: -50px;
+    right: 30%;
+    height: 1024px;
+    width: 640px;
+
+}
 
 h2 {
 
