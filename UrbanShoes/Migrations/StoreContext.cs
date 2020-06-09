@@ -37,11 +37,11 @@ namespace UrbanShoes.Migrations
             };
             categories.ForEach(c => context.Categories.AddOrUpdate(p => p.Name, c));
             context.SaveChanges();
-            /*
+            
             var products = new List<Product>
             {
-                new Product { Name = "Sleep Suit", Description="For sleeping or general wear",Price=4.99M, CategoryID=categories.Single( c => c.Name == "Clothes").ID },
-                new Product { Name = "Vest", Description="For sleeping or general wear", Price=2.99M, CategoryID=categories.Single( c => c.Name == "Clothes").ID },
+                new Product { Name = "Jordan Takkies", Description="Comfortable and durable",Price=800, CategoryID=categories.Single( c => c.Name == "Takkies").ID },
+               /* new Product { Name = "Vest", Description="For sleeping or general wear", Price=2.99M, CategoryID=categories.Single( c => c.Name == "Clothes").ID },
                 new Product { Name = "Orange and Yellow Lion", Description="Makes a squeaking noise", Price=1.99M, CategoryID=categories.Single( c => c.Name =="Play and Toys").ID  },
                 new Product { Name = "Blue Rabbit", Description="Baby comforter", Price=2.99M, CategoryID=categories.Single( c => c.Name == "Play and Toys").ID },
                 new Product { Name = "3 Pack of Bottles", Description="For a leak free drink everytime", Price=24.99M, CategoryID=categories.Single( c => c.Name == "Feeding").ID },
@@ -57,10 +57,11 @@ namespace UrbanShoes.Migrations
                 new Product { Name = "Cot Bed", Description="Converts from cot into bed for older children", Price=149.99M, CategoryID=categories.Single( c => c.Name == "Sleeping").ID  },
                 new Product { Name = "Circus Crib Bale", Description="Contains sheet, duvet and bumper", Price=29.99M, CategoryID=categories.Single( c => c.Name == "Sleeping").ID  },
                 new Product { Name = "Loved Crib Bale", Description="Contains sheet, duvet and bumper", Price=35.99M, CategoryID=categories.Single( c => c.Name == "Sleeping").ID  }
+                */
             };
-            */
-            //products.ForEach(c => context.Products.AddOrUpdate(p => p.Name, c));
-            //  context.SaveChanges();
+            
+            products.ForEach(c => context.Products.AddOrUpdate(p => p.Name, c));
+            context.SaveChanges();
 
             /*
             var images = new List<ProductImage>
