@@ -37,29 +37,30 @@ namespace UrbanShoes.Migrations
             };
             categories.ForEach(c => context.Categories.AddOrUpdate(p => p.Name, c));
             context.SaveChanges();
-            
+
             var products = new List<Product>
             {
-                new Product { Name = "Jordan Takkies", Description="Comfortable and durable",Price=800, CategoryID=categories.Single( c => c.Name == "Takkies").ID },
-               /* new Product { Name = "Vest", Description="For sleeping or general wear", Price=2.99M, CategoryID=categories.Single( c => c.Name == "Clothes").ID },
-                new Product { Name = "Orange and Yellow Lion", Description="Makes a squeaking noise", Price=1.99M, CategoryID=categories.Single( c => c.Name =="Play and Toys").ID  },
-                new Product { Name = "Blue Rabbit", Description="Baby comforter", Price=2.99M, CategoryID=categories.Single( c => c.Name == "Play and Toys").ID },
-                new Product { Name = "3 Pack of Bottles", Description="For a leak free drink everytime", Price=24.99M, CategoryID=categories.Single( c => c.Name == "Feeding").ID },
-                new Product { Name = "3 Pack of Bibs", Description="Keep your baby dry when feeding", Price=8.99M, CategoryID=categories.Single( c => c.Name == "Feeding").ID  },
-                new Product { Name = "Powdered Baby Milk", Description="Nutritional and Tasty", Price=9.99M, CategoryID=categories.Single( c => c.Name == "Feeding").ID  },
-                new Product { Name = "Pack of 70 Disposable Nappies", Description="Dry and secure nappies with snug fit", Price=19.99M, CategoryID=categories.Single( c => c.Name == "Feeding").ID  },
-                new Product { Name = "Colic Medicine", Description="For helping with baby colic pains", Price=4.99M, CategoryID=categories.Single( c => c.Name == "Medicine").ID  },
-                new Product { Name = "Reflux Medicine", Description="Helps to prevent milk regurgitation and sickness", Price=4.99M, CategoryID=categories.Single( c => c.Name == "Medicine").ID  },
-                new Product { Name = "Black Pram and Pushchair System", Description="Convert from pram to pushchair, with raincover", Price=299.99M, CategoryID=categories.Single( c => c.Name == "Travel").ID  },
-                new Product { Name = "Car Seat", Description="For safe car travel", Price=49.99M, CategoryID= categories.Single( c => c.Name == "Travel").ID  },
-                new Product { Name = "Moses Basket", Description="Plastic moses basket", Price=75.99M, CategoryID=categories.Single( c => c.Name == "Sleeping").ID  },
-                new Product { Name = "Crib", Description="Wooden crib", Price=35.99M, CategoryID= categories.Single( c => c.Name == "Sleeping").ID  },
-                new Product { Name = "Cot Bed", Description="Converts from cot into bed for older children", Price=149.99M, CategoryID=categories.Single( c => c.Name == "Sleeping").ID  },
-                new Product { Name = "Circus Crib Bale", Description="Contains sheet, duvet and bumper", Price=29.99M, CategoryID=categories.Single( c => c.Name == "Sleeping").ID  },
-                new Product { Name = "Loved Crib Bale", Description="Contains sheet, duvet and bumper", Price=35.99M, CategoryID=categories.Single( c => c.Name == "Sleeping").ID  }
-                */
-            };
-            
+                new Product { Name = "Jordan Takkies", Description="Comfortable and durable",Price=799, CategoryID=categories.Single( c => c.Name == "Takkies").ID },
+               new Product { Name = "Black Combat Boots", Description="Rough, Tough look with striking dark features", Price=950, CategoryID=categories.Single( c => c.Name == "CombatBoots").ID },
+                new Product { Name = "Ronnies Sneakers", Description="Comfortable and durable", Price= 799, CategoryID=categories.Single( c => c.Name == "Sneakers").ID  },
+                new Product { Name = "Sandies Sliders", Description="Afforable in a range of colors", Price= 499, CategoryID=categories.Single( c => c.Name == "Sneakers").ID },
+                new Product { Name = "Leelays", Description="Soft to touch, built to last", Price=499, CategoryID=categories.Single( c => c.Name == "Loafers").ID },
+                new Product { Name = "Snookers", Description="Stress reliever for the feet", Price=599, CategoryID=categories.Single( c => c.Name == "Loafers").ID  },
+                /*
+               new Product { Name = "Powdered Baby Milk", Description="Nutritional and Tasty", Price=9.99M, CategoryID=categories.Single( c => c.Name == "Feeding").ID  },
+               new Product { Name = "Pack of 70 Disposable Nappies", Description="Dry and secure nappies with snug fit", Price=19.99M, CategoryID=categories.Single( c => c.Name == "Feeding").ID  },
+               new Product { Name = "Colic Medicine", Description="For helping with baby colic pains", Price=4.99M, CategoryID=categories.Single( c => c.Name == "Medicine").ID  },
+               new Product { Name = "Reflux Medicine", Description="Helps to prevent milk regurgitation and sickness", Price=4.99M, CategoryID=categories.Single( c => c.Name == "Medicine").ID  },
+               new Product { Name = "Black Pram and Pushchair System", Description="Convert from pram to pushchair, with raincover", Price=299.99M, CategoryID=categories.Single( c => c.Name == "Travel").ID  },
+               new Product { Name = "Car Seat", Description="For safe car travel", Price=49.99M, CategoryID= categories.Single( c => c.Name == "Travel").ID  },
+               new Product { Name = "Moses Basket", Description="Plastic moses basket", Price=75.99M, CategoryID=categories.Single( c => c.Name == "Sleeping").ID  },
+               new Product { Name = "Crib", Description="Wooden crib", Price=35.99M, CategoryID= categories.Single( c => c.Name == "Sleeping").ID  },
+               new Product { Name = "Cot Bed", Description="Converts from cot into bed for older children", Price=149.99M, CategoryID=categories.Single( c => c.Name == "Sleeping").ID  },
+               new Product { Name = "Circus Crib Bale", Description="Contains sheet, duvet and bumper", Price=29.99M, CategoryID=categories.Single( c => c.Name == "Sleeping").ID  },
+               new Product { Name = "Loved Crib Bale", Description="Contains sheet, duvet and bumper", Price=35.99M, CategoryID=categories.Single( c => c.Name == "Sleeping").ID  }
+               */
+           };
+
             products.ForEach(c => context.Products.AddOrUpdate(p => p.Name, c));
             context.SaveChanges();
 
@@ -173,6 +174,8 @@ namespace UrbanShoes.Migrations
 
             imageMappings.ForEach(c => context.ProductImageMappings.AddOrUpdate(im => im.ProductImageID, c));
             context.SaveChanges(); */
+
+
 
         }
     }
