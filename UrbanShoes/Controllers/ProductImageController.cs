@@ -6,12 +6,11 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using UrbanShoes.DAL;
-using UrbanShoes.Models;
 using System.Web.Helpers;
 using System.Data.SqlClient;
 using System.Data.Entity.Infrastructure;
-using Microsoft.AspNet.Identity;
+using UrbanShoes.DAL;
+using UrbanShoes.Models;
 
 namespace UrbanShoes.Controllers
 {
@@ -158,8 +157,8 @@ namespace UrbanShoes.Controllers
                 }
             }
 
-          //  System.IO.File.Delete(Request.MapPath(Constants.ProductImagePath + productImage.FileName));
-          //  System.IO.File.Delete(Request.MapPath(Constants.ProductThumbnailPath + productImage.FileName));
+            System.IO.File.Delete(Request.MapPath(Constants.ProductImagePath + productImage.FileName));
+           // System.IO.File.Delete(Request.MapPath(Constants.ProductThumbnailPath + productImage.FileName));
             db.ProductImages.Remove(productImage);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -192,12 +191,12 @@ namespace UrbanShoes.Controllers
             {
                 img.Resize(190, img.Height);
             }
-          //  img.Save(Constants.ProductImagePath + file.FileName);
+           img.Save(Constants.ProductImagePath + file.FileName);
             if (img.Width > 100)
             {
                 img.Resize(100, img.Height);
             }
-          //  img.Save(Constants.ProductThumbnailPath + file.FileName);
+          // img.Save(Constants.ProductThumbnailPath + file.FileName);
         }
     }
 }
