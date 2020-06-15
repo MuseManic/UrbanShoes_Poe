@@ -221,6 +221,12 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Image\background1.png" />
+    <Content Include="Image\ProductImages\Pshoe1.jpeg" />
+    <Content Include="Image\ProductImages\Pshoe2.jpeg" />
+    <Content Include="Image\ProductImages\Pshoe3.jpeg" />
+    <Content Include="Image\ProductImages\Pshoe4.jpeg" />
+    <Content Include="Image\ProductImages\Pshoe5.jpeg" />
+    <Content Include="Image\ProductImages\Pshoe6.jpeg" />
     <Content Include="Image\Shoe1.jpg" />
     <Content Include="Image\Shoe3.jpg" />
     <Content Include="Image\Shoe4.jpg" />
@@ -290,13 +296,14 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Account\_LayoutPage1.cshtml" />
+    <Content Include="Views\ProductImages\Index.cshtml" />
+    <Content Include="Views\ProductImages\Upload.cshtml" />
+    <Content Include="Views\ProductImages\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Image\ProductImages\" />
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\Basket\" />
     <Folder Include="Views\Errors\" />
-    <Folder Include="Views\ProductImages\" />
     <Folder Include="Views\UserAdmin\" />
   </ItemGroup>
   <ItemGroup>

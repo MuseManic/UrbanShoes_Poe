@@ -63,16 +63,17 @@ namespace UrbanShoes.Migrations
             products.ForEach(c => context.Products.AddOrUpdate(p => p.Name, c));
             context.SaveChanges();
 
-            /*
+            
             var images = new List<ProductImage>
             {
-                new ProductImage { FileName="SleepSuit1.JPG" },
-                new ProductImage { FileName="SleepSuit2.JPG" },
-                new ProductImage { FileName="Vest1.JPG" },
-                new ProductImage { FileName="Vest2.JPG" },
-                new ProductImage { FileName="Lion1.JPG" },
-                new ProductImage { FileName="Rabbit1.JPG" },
-                new ProductImage { FileName="Bottles1.JPG" },
+                new ProductImage { FileName="Pshoe1.jpeg" },
+                new ProductImage { FileName="Pshoe2.jpeg" },
+                new ProductImage { FileName="Pshoe3.jpeg" },
+                new ProductImage { FileName="Pshoe4.jpeg" },
+                new ProductImage { FileName="Pshoe5.jpeg" },
+                new ProductImage { FileName="Pshoe6.jpeg" },
+        
+                /*
                 new ProductImage { FileName="Bottles2.JPG" },
                 new ProductImage { FileName="Bottles3.JPG" },
                 new ProductImage { FileName="Bibs1.JPG" },
@@ -98,10 +99,12 @@ namespace UrbanShoes.Migrations
                 new ProductImage { FileName="CircusBale2.JPG" },
                 new ProductImage { FileName="CircusBale3.JPG" },
                 new ProductImage { FileName="LovedBale1.JPG" },
+                */
             };
 
             images.ForEach(c => context.ProductImages.AddOrUpdate(p => p.FileName, c));
             context.SaveChanges();
+            /*
 
             var imageMappings = new List<ProductImageMapping>
             {
@@ -172,7 +175,7 @@ namespace UrbanShoes.Migrations
             };
 
             imageMappings.ForEach(c => context.ProductImageMappings.AddOrUpdate(im => im.ProductImageID, c));
-            context.SaveChanges(); */
+            context.SaveChanges();  */
 
 
 
