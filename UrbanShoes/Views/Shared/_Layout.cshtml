@@ -21,13 +21,15 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("URBAN SHOES", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+               
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Shop by Category", "Index", "Categories")</li>
                     <li>@Html.ActionLink("View all our Products", "Index", "Products")</li>
-                    <li>@Html.ActionLink("Cart", "Index", "Cart") </li>
+                    <li>@Html.ActionLink("Basket", "Index", "Basket") </li>
+
                 </ul>
                 @using (Html.BeginForm("Index", "Products", FormMethod.Get, new { @class = "navbar-form navbar-left" }))
                 {
@@ -36,11 +38,18 @@
                     </div>
                     <button type="submit" class="btn btn-default">Submit</button>
                 }
+            <div class="smaller">
+                @Html.Action("Summary", "Basket")
+            </div>
+            
+
 
                 @Html.Partial("_LoginPartial")
+
             </div>
         </div>
     </div>
+  
     <div class="container body-content">
         @RenderBody()
         <hr />

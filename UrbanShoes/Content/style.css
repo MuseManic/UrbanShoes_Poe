@@ -12,6 +12,10 @@ Author URL: http://w3layouts.com
   html {
       scroll-behavior: smooth;
   }
+  #smaller
+  {
+      font-size:12px;
+  }
 
   body,
   html {

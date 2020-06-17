@@ -12,8 +12,8 @@
 }
 #divunder {
     position: absolute;
-    top: 30%;
-    margin-top: -50px;
+    top: 40%;
+    margin-top: -80px;
     right: 30%;
     height: 1024px;
     width: 640px;
@@ -31,7 +31,7 @@ h2 {
 #divdrop {
     position: absolute;
     right:37%;
-    top: 15%;
+    top: 20%;
     margin-top: -50px;
   }
 
