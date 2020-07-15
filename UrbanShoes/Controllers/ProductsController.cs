@@ -9,6 +9,8 @@ using System.Web.Mvc;
 using UrbanShoes.DAL;
 using UrbanShoes.Models;
 using UrbanShoes.ViewModels;
+using PagedList;
+using UrbanShoes;
 
 namespace BabyStore.Controllers
 {
@@ -17,7 +19,7 @@ namespace BabyStore.Controllers
         private MainStore db = new MainStore();
 
         // GET: Products
-        public ActionResult Index(string category, string search)
+        public ActionResult Index(string category, string search, string sortby, int? page)
         {
             //instantiate a new view model
             ProductIndexViewModel viewModel = new ProductIndexViewModel();
@@ -52,8 +54,30 @@ namespace BabyStore.Controllers
                 products = products.Where(p => p.Category.Name == category);
             }
 
-            viewModel.Products = products;
+            switch (sortby)
+            {
+                case "price_lowest":
+                    products = products.OrderBy(p => p.Price);
+                    break;
+                case "price_highest":
+                    products = products.OrderByDescending(p => p.Price);
+                    break;
+                default:
+                    products = products.OrderBy(p => p.Name);
+                    break;
+            }
+
+            int currentPage = (page ?? 1);
+            viewModel.Products = products.ToPagedList(currentPage, Constants.PageItems);
+            viewModel.SortBy = sortby;
+            viewModel.Sorts = new Dictionary<string, string>
+            {
+                {"Price low to high", "price_lowest" },
+                {"Price high to low", "price_highest" }
+            };
+
             return View(viewModel);
+           
         }
 
         // GET: Products/Details/5
