@@ -5,6 +5,7 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+
 namespace UrbanShoes.Models
 {
     public class ProductImage
@@ -15,6 +16,6 @@ namespace UrbanShoes.Models
         [Index(IsUnique = true)]
         public string FileName { get; set; }
 
-        public virtual ICollection<ProductImageMapping> ProductImageMappings { get; set; }
+       public virtual ICollection<ProductImageMapping> ProductImageMappings { get; set; }
     }
 }

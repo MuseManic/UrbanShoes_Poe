@@ -19,7 +19,7 @@ namespace BabyStore.Controllers
         private MainStore db = new MainStore();
 
         // GET: Products
-        public ActionResult Index(string category, string search, string sortby, int? page)
+        public ActionResult Index(string category, string search, string sortBy, int? page)
         {
             //instantiate a new view model
             ProductIndexViewModel viewModel = new ProductIndexViewModel();
@@ -41,7 +41,7 @@ namespace BabyStore.Controllers
                                       where
                                       matchingProducts.CategoryID != null
                                       group matchingProducts by
-               matchingProducts.Category.Name into
+                                       matchingProducts.Category.Name into
                                       catGroup
                                       select new CategoryWithCount()
                                       {
@@ -52,9 +52,11 @@ namespace BabyStore.Controllers
             if (!String.IsNullOrEmpty(category))
             {
                 products = products.Where(p => p.Category.Name == category);
+                viewModel.Category = category;
             }
 
-            switch (sortby)
+            //sort the results
+            switch (sortBy)
             {
                 case "price_lowest":
                     products = products.OrderBy(p => p.Price);
@@ -69,7 +71,7 @@ namespace BabyStore.Controllers
 
             int currentPage = (page ?? 1);
             viewModel.Products = products.ToPagedList(currentPage, Constants.PageItems);
-            viewModel.SortBy = sortby;
+            viewModel.SortBy = sortBy;
             viewModel.Sorts = new Dictionary<string, string>
             {
                 {"Price low to high", "price_lowest" },
@@ -77,7 +79,7 @@ namespace BabyStore.Controllers
             };
 
             return View(viewModel);
-           
+
         }
 
         // GET: Products/Details/5

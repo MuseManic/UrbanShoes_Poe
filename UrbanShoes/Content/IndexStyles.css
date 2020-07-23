@@ -10,6 +10,15 @@
     width: 640px;
     background-image: url(../Image/background1.png);
 }
+#divback2 {
+    position: absolute;
+    top: 50%;
+    margin-top: 50px;
+    right: 30%;
+    height: 1024px;
+    width: 640px;
+  
+}
 #divunder {
     position: absolute;
     top: 40%;
