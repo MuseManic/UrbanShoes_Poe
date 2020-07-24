@@ -5,7 +5,7 @@ using System.Web;
 
 namespace UrbanShoes.Models
 {
-    public class ProductImageMapping
+    public class ProductImageMappings
     {
         public int ID { get; set; }
         public int ImageNumber { get; set; }

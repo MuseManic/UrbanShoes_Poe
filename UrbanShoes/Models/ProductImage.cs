@@ -16,6 +16,6 @@ namespace UrbanShoes.Models
         [Index(IsUnique = true)]
         public string FileName { get; set; }
 
-       public virtual ICollection<ProductImageMapping> ProductImageMappings { get; set; }
+       public virtual ICollection<ProductImageMappings> ProductImageMappings { get; set; }
     }
 }

@@ -198,8 +198,8 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductImage.cs" />
-    <Compile Include="Models\ProductImageMapping.cs" />
-    <Compile Include="Models\ProductImagesController.cs" />
+    <Compile Include="Models\ProductImageMappings.cs" />
+    <Compile Include="Controllers\ProductImagesController.cs" />
     <Compile Include="Models\ProductMetaData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -228,12 +228,11 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Image\background1.png" />
-    <Content Include="Image\ProductImage\Pshoe1.jpeg" />
-    <Content Include="Image\ProductImage\Pshoe2.jpeg" />
-    <Content Include="Image\ProductImage\Pshoe3.jpeg" />
-    <Content Include="Image\ProductImage\Pshoe4.jpeg" />
-    <Content Include="Image\ProductImage\Pshoe5.jpeg" />
-    <Content Include="Image\ProductImage\Pshoe6.jpeg" />
+    <Content Include="Image\ProductImages\Pshoe2.jpeg" />
+    <Content Include="Image\ProductImages\Pshoe3.jpeg" />
+    <Content Include="Image\ProductImages\Pshoe4.jpeg" />
+    <Content Include="Image\ProductImages\Pshoe5.jpeg" />
+    <Content Include="Image\ProductImages\Pshoe6.jpeg" />
     <Content Include="Image\Shoe1.jpg" />
     <Content Include="Image\Shoe3.jpg" />
     <Content Include="Image\Shoe4.jpg" />
@@ -309,7 +308,7 @@
     <Content Include="Views\ProductImages\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Image\ProductImage\Thumbnails\" />
+    <Folder Include="Image\ProductImages\Thumbnails\" />
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\Errors\" />
     <Folder Include="Views\UserAdmin\" />

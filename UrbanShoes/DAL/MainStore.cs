@@ -13,7 +13,7 @@ namespace UrbanShoes.DAL
         public DbSet<Category> Categories { get; set; }
               
         public DbSet<ProductImage> ProductImages { get; set; }
-        public DbSet<ProductImageMapping> ProductImageMappings { get; set; }
+        public DbSet<ProductImageMappings> ProductImageMappings { get; set; }
         public DbSet<BasketLines> BasketLines { get; set; } 
     }
 }

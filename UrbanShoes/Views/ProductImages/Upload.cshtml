@@ -8,8 +8,8 @@
 <link rel="stylesheet" href="~/Content/IndexStyles.css" />
 <h2>@ViewBag.Title</h2>
 
-<div id="divback2">
-    @using (Html.BeginForm("Upload", "ProductImage", FormMethod.Post, new { enctype = "multipart/form-data" }))
+<div id="divback">
+    @using (Html.BeginForm("Upload", "ProductImages", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()
 

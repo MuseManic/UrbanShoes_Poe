@@ -129,14 +129,14 @@ namespace UrbanShoes
             base.Seed(context);
         }
 
-        //Create User=admin@mvcbabystore.com with Adm1n@mvcbabystore.com in the Admin role        
+        //Create User=admin@urbanshoes.com with 1234 in the Admin role        
         public static void InitializeIdentityForEF(ApplicationDbContext db)
         {
             var userManager =
              HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var roleManager = HttpContext.Current.GetOwinContext().Get<ApplicationRoleManager>();
-            const string name = "admin@mvcbabystore.com";
-            const string password = "Adm1n@mvcbabystore.com";
+            const string name = "admin@urbanshoes.com";
+            const string password = "1234";
             const string roleName = "Admin";
 
             //Create Role Admin if it does not exist
