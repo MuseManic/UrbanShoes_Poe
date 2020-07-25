@@ -30,7 +30,7 @@ namespace UrbanShoes.ViewModels
         public decimal Price { get; set; }
 
         [Display(Name = "Category")]
-        public int CategoryID { get; set; }
+        public IEnumerable<int> Category_ID { get; set; }
         public SelectList CategoryList { get; set; }
         public List<SelectList> ImageLists { get; set; }
         public string[] ProductImages { get; set; }
