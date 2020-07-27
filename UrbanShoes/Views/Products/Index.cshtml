@@ -1,4 +1,5 @@
 ﻿@model UrbanShoes.ViewModels.ProductIndexViewModel
+@using PagedList.Mvc
 
 @{
     ViewBag.Title = "Products";
@@ -22,23 +23,31 @@
 
     </h2>
 
-    </div>
+</div>
 
 <div id="divunder">
 
     <p>
-        @Html.ActionLink("Create New", "Create")
-        @using (Html.BeginForm("Index", "Products", FormMethod.Get))
+
+        @if (Request.IsAuthenticated && User.IsInRole("Admin"))
         {
-            <label>Filter by category:</label>
-            @*@Html.DropDownListFor(vm => vm.Category, Model.CatFilterItems, "All");*@
-            <input type="submit" value="Filter" />
-            <input type="hidden" name="Search" id="Search" value="@Model.Search" />
+            @Html.ActionLink("Create New", "Create")
         }
-    </p>
+            @using (Html.BeginForm("Index", "Products", FormMethod.Get))
+            {
+                <label>Filter by category:</label>
+                @Html.DropDownListFor(vm => vm.Category, Model.CatFilterItems, "All");
+                <input type="submit" value="Filter" />
+                <input type="hidden" name="Search" id="Search" value="@Model.Search" />
+            }
+        </p>
+
 
     <table class="table">
+
         <tr>
+
+
             <th>
                 @Html.DisplayNameFor(model => model.Category)
             </th>
@@ -52,7 +61,9 @@
                 @Html.DisplayNameFor(model => model.Products.First().Price)
             </th>
             <th></th>
+
         </tr>
+
 
         @foreach (var item in Model.Products)
         {
@@ -81,11 +92,18 @@
                     @Html.DisplayFor(modelItem => item.Price)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                        @Html.Raw(" | ")
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    }
                 </td>
             </tr>
         }
     </table>
+    <div>
+        Page @(Model.Products.PageCount < Model.Products.PageNumber ? 0 : Model.Products.PageNumber) of @Model.Products.PageCount
+        @Html.PagedListPager(Model.Products, page => Url.Action("Index", new { category = @Model.Category, Search = @Model.Search, sortBy = @Model.SortBy, page }))
     </div>
+</div>

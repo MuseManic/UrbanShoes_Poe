@@ -10,7 +10,7 @@ using System.Linq;
 using System.Data.Entity;
 using System;
 
-namespace BabyStore.Controllers
+namespace UrbanShoes.Controllers
 {
     public class ProductImagesController : Controller
     {

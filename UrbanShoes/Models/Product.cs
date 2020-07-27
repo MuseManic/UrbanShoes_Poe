@@ -25,7 +25,7 @@ namespace UrbanShoes.Models
         [RegularExpression("[0-9]+(\\.[0-9][0-9]?)?", ErrorMessage = "The price must be a number up to two decimal places")]
         public decimal Price { get; set; }
 
-        public IEnumerable<int?> CategoryID { get; set; }
+        public int? CategoryID { get; set; }
         public virtual Category Category { get; set; }
 
         public virtual ICollection<ProductImageMappings> ProductImageMappings { get; set; }

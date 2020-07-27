@@ -12,7 +12,7 @@ using UrbanShoes.ViewModels;
 using PagedList;
 using UrbanShoes;
 
-namespace BabyStore.Controllers
+namespace UrbanShoes.Controllers
 {
     public class ProductsController : Controller
     {
@@ -105,7 +105,7 @@ namespace BabyStore.Controllers
             viewModel.ImageLists = new List<SelectList>();
             for(int i  = 0; i < Constants.NumberOfProductImages; i++)
             {
-                viewModel.ImageLists.Add(new SelectList(db.ProductImages, "ID", "Name"));
+                viewModel.ImageLists.Add(new SelectList(db.ProductImages, "ID", "FileName"));
 
             }
           
@@ -117,8 +117,25 @@ namespace BabyStore.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Description,Price,CategoryID")] Product product)
+        public ActionResult Create(ProductViewModel viewModel)
         {
+            Product product = new Product();
+            product.Name = viewModel.Name;
+            product.Description = viewModel.Description;
+            product.Price = viewModel.Price;
+            product.CategoryID = viewModel.CategoryID;
+            product.ProductImageMappings = new List<ProductImageMappings>();
+            //get a list of selected images without any blanks
+            string[] productImages = viewModel.ProductImages.Where(pi => !string.IsNullOrEmpty(pi)).ToArray();
+            for (int i = 0; i < productImages.Length; i++)
+            {
+                product.ProductImageMappings.Add(new ProductImageMappings
+                {
+                    ProductImage = db.ProductImages.Find(int.Parse(productImages[i])),
+                    ImageNumber = i
+                });
+            }
+
             if (ModelState.IsValid)
             {
                 db.Products.Add(product);
@@ -126,8 +143,13 @@ namespace BabyStore.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CategoryID = new SelectList(db.Categories, "ID", "Name", product.CategoryID);
-            return View(product);
+            viewModel.CategoryList = new SelectList(db.Categories, "ID", "Name", product.CategoryID);
+            viewModel.ImageLists = new List<SelectList>();
+            for (int i = 0; i < Constants.NumberOfProductImages; i++)
+            {
+                viewModel.ImageLists.Add(new SelectList(db.ProductImages, "ID", "FileName", viewModel.ProductImages[i]));
+            }
+            return View(viewModel);
         }
 
         // GET: Products/Edit/5

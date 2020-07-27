@@ -28,6 +28,11 @@
     width: 640px;
 
 }
+#pushleft {
+ 
+    right: 80%;
+
+}
 
 h2 {
 
@@ -43,7 +48,7 @@ h2 {
     top: 20%;
     margin-top: -50px;
   }
-#divdrop2 {
+#basketname {
     position: absolute;
     top: 20%;
     margin-top: -50px;

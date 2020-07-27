@@ -178,7 +178,6 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BasketController.cs" />
-    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -192,7 +191,6 @@
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Basket.cs" />
     <Compile Include="Models\BasketLines.cs" />
-    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -234,6 +232,7 @@
     <Content Include="Image\ProductImages\Pshoe4.jpeg" />
     <Content Include="Image\ProductImages\Pshoe5.jpeg" />
     <Content Include="Image\ProductImages\Pshoe6.jpeg" />
+    <Content Include="Image\ProductImages\shoe7.jfif" />
     <Content Include="Image\Shoe1.jpg" />
     <Content Include="Image\Shoe3.jpg" />
     <Content Include="Image\Shoe4.jpg" />
