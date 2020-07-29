@@ -29,10 +29,9 @@
 
     <p>
 
-        @if (Request.IsAuthenticated && User.IsInRole("Admin"))
-        {
+      
             @Html.ActionLink("Create New", "Create")
-        }
+        
             @using (Html.BeginForm("Index", "Products", FormMethod.Get))
             {
                 <label>Filter by category:</label>

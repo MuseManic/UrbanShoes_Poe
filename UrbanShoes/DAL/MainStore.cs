@@ -14,7 +14,9 @@ namespace UrbanShoes.DAL
               
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<ProductImageMappings> ProductImageMappings { get; set; }
-        public DbSet<BasketLines> BasketLines { get; set; } 
+        public DbSet<BasketLines> BasketLines { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderLine> OrderLines { get; set; }
     }
 }
 
